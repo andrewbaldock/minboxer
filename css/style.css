@@ -138,8 +138,7 @@ header {
     min-height: 30px;
 }
 
-#galleryitems div {
-
+#galleryitems  {
 }	
 
 .item-wrap {
@@ -170,7 +169,7 @@ a.item {
 .results {display:inline-block;}
 .results.hidden {display:none!important}
 
-#paginator {display:block;width:100%;padding:10px 0px;}
+#paginator {display:block;width:100%;padding:10px 0px;margin-top:-22px}
 .pager {
 	display:inline-block;
 	padding:2px 8px;
@@ -215,20 +214,7 @@ a.item {
 		line-height:22px;
 	}
 }
-@media only screen and (min-width: 628px) and (max-width: 766px) {
-	#results {
-		width:628px;
-	}
-	h1 {font-size:35px;}
-	#subtitle {
-		margin-top: -25px;
-		margin-left: 28px;
-		font-size: 22px;
-		line-height:22px;
-		letter-spacing:5px;
-	}
-}
-@media only screen and (min-width: 480px) and (max-width: 627px) {
+@media only screen and (min-width: 480px) and (max-width: 765) {
 	#results {
 		width:490px;
 	}
