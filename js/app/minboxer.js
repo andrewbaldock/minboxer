@@ -111,6 +111,7 @@ define(["jquery", "json2", "backbone"], function($,Backbone,df_auth) {
 				mnbx.gallery.fetch({
 					  //dataType: "jsonp",
 						success: function() {
+								mnbx.spinner();
 								mnbx.log('backbone collection activated: user logged in');
 								if(typeof mnbx.galleryView == 'undefined') {
 									mnbx.galleryView = new GalleryView({collection: mnbx.gallery});

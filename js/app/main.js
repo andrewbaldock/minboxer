@@ -13,9 +13,9 @@ define(["jquery", "underscore", "json2", "backbone", "app/minboxer"], function($
 			if(typeof _ !='undefined') {console.log("underscore loaded");}
 			if(typeof Backbone !='undefined') {console.log("backbone loaded");}
 		
-			(function toggleSpinner(){
-				$('#spinner').slideUp('fastest');
-			}());
+			mnbx.spinner = function (){
+				$('#spinner').toggle();
+			};
 			
 			
 			mnbx.log = function(wut){
