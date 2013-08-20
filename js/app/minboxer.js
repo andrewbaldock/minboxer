@@ -1,6 +1,6 @@
-define(["jquery", "json2", "backbone"], function($,Backbone,df_auth) {
+define(["jquery", "json2", "backbone", "backbone-pageable"], function($,Backbone,df_auth,pageable) {
   mnbx.minboxer = function() {
-  	require(['backbone'], function (Backbone) {
+  	require(['backbone', 'backbone-pageable'], function (Backbone, pageable) {
   	
   		mnbx.baseurl = '//stage.minbox.com/api';
   		mnbx.apikey = 'access_token=nE92neTwflBTmHDpw0nkliIr4BCdNJKH5SQN9lGE';
@@ -67,11 +67,6 @@ define(["jquery", "json2", "backbone"], function($,Backbone,df_auth) {
 			var GalleryView = Backbone.View.extend({
 				el: $('#galleryitems'),
 				initialize: function() {
-						// not sure these are doing anything
-						this.collection.on("reset", this.render, this);
-    				this.collection.on("add", this.render, this);
-    				this.collection.on("remove", this.render, this);
-    				this.collection.on("push", this.render, this);
 						this.render();
 				},
 				render: function() {
