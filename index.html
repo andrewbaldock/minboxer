@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>minboxer</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
+    <meta content="minboxer: browser minbox galleries" name="description">
+    <meta content="SoundCloud Radio" name="keywords">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="http://andrewbaldock.com/soundora" rel="canonical">
+    <link href="/img/sitepreview.png" rel="image_src" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/longshadow.css" rel="stylesheet" type="text/css">
+    <script data-main="js/app/startup" src="js/lib/require.js"></script>
+    
+</head>
+<body>
+<!--[if lt IE 7]>
+  <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+
+
+
+	<div id="container">
+	
+		<header>
+			<h1>minboxer</h1>
+		</header>
+		
+		<div id="galleryitems"></div>
+		<script type="text/template" id="galleryItem-template">
+			<div class="item-wrap" id="item<%= id %>">
+				<a href="#" class="item"><%= id %></a>
+			</div>
+		</script>
+				
+		<div id="spinner"></div>
+				
+		<div id="results"></div><!--/results-->
+    
+  </div><!--/container-->
+    
+</body>
+</html>

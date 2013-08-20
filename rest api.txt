@@ -1,0 +1,11 @@
+Our API Docs may be found here: http://docs.minbox.com/minbox
+
+Test OAuth token to use: nE92neTwflBTmHDpw0nkliIr4BCdNJKH5SQN9lGE
+ID of Gallery to display: Kh8ciPDKyg
+
+
+
+retrieve 
+stage.minbox.com/api/galleries/Kh8ciPDKyg?access_token=nE92neTwflBTmHDpw0nkliIr4BCdNJKH5SQN9lGE
+
+
