@@ -1,6 +1,6 @@
-define(["jquery", "json2", "backbone", "backbone-pageable"], function($,Backbone,df_auth,pageable) {
+define(["jquery", "json2", "backbone"], function($,Backbone) {
   mnbx.minboxer = function() {
-  	require(['backbone', 'backbone-pageable'], function (Backbone, pageable) {
+  	require(['backbone'], function (Backbone) {
   	
   		mnbx.baseurl = '//stage.minbox.com/api';
   		mnbx.apikey = 'access_token=nE92neTwflBTmHDpw0nkliIr4BCdNJKH5SQN9lGE';
@@ -46,18 +46,18 @@ define(["jquery", "json2", "backbone", "backbone-pageable"], function($,Backbone
 				//url: mnbx.baseurl + '/galleries/' + mnbx.defaultGallery + '?' + mnbx.apikey,
 				url: "js/data/gallery.json",
 				parse: function(resp) {
-						mnbx.log('pre-parse: "resp":');
-						mnbx.log(resp);
+						//mnbx.log('pre-parse: "resp":');
+						//mnbx.log(resp);
 						_.each(resp.gallery_items, function(data) {
-										mnbx.log('Gallery parse: inside each, here is "data":');
-										mnbx.log(data);
+										//mnbx.log('Gallery parse: inside each, here is "data":');
+										//mnbx.log(data);
 										this.models.push( new mnbx.GalleryItem({model: data}) ); // genius, essential
 						}, this);
-						mnbx.log(this);
+						//mnbx.log(this);
 				},
 				initialize: function() {
-					mnbx.log('collection initialize: "this":');
-					mnbx.log(this);
+					//mnbx.log('collection initialize: "this":');
+					//mnbx.log(this);
 				}
 			});
 			
@@ -83,13 +83,67 @@ define(["jquery", "json2", "backbone", "backbone-pageable"], function($,Backbone
 								
 								var self = this;
 								_.each(results, function(data) {
-										mnbx.log('inside each, here is "data":');
-										mnbx.log(data);
+										//mnbx.log('inside each, here is "data":');
+										//mnbx.log(data);
 										self.$el.append( new GalleryItemView({model: data.attributes.model}).render().el);  // genius, essential
 								}, this);
 						
 						 }
-						// here you can clean up results, apply styles, etc
+						// clean up results, apply styles, etc here
+						
+						// PRESENTING: superduper ghetto pagination!
+						//should really install a true backbone paginator, but, Judo!
+							function pager(rec){
+							if (rec <= 24) {return 1}
+							if (rec <= 48) {return 2}
+							if (rec <= 72) {return 3}
+							if (rec <= 96) {return 4}
+							if (rec <= 120) {return 5}
+							if (rec <= 144) {return 6}
+							if (rec <= 168) {return 7}
+							if (rec <= 192) {return 8}
+							if (rec <= 216) {return 9}
+							if (rec <= 240) {return 10}
+							if (rec <= 264) {return 11}
+							if (rec <= 288) {return 12}
+							if (rec <= 312) {return 13}
+							if (rec <= 336) {return 14}
+							if (rec <= 360) {return 15}
+							return 0;
+						}
+						mnbx.rec = 0;
+						$('.item-wrap').parent().each(function(){
+								mnbx.rec = mnbx.rec+1;
+								var page = pager(mnbx.rec);
+								$(this).addClass('page'+page).addClass('results').addClass('hidden');
+								$(this).addClass('hidden');
+						});
+						
+						$('.page1').removeClass('hidden');
+						mnbx.currentpage = 1;
+						
+						
+						mnbx.pagecount = parseInt(results.length/24)+1;
+						
+						for(i=1;i<=mnbx.pagecount;i++){
+							$('#paginator').append('<a class="pager" id="page' + i + '">' + i + '</div>');
+						}
+						
+						
+						
+						$('.pager').click(function() {
+						
+							var pageid = $(this).prop('id');
+							$('.pager').removeClass('thispage');
+							$('.page' + mnbx.currentpage).addClass('hidden');
+							$('.'+pageid).removeClass('hidden');
+							$('#'+pageid).addClass('thispage');
+							mnbx.currentpage = pageid.replace('page','');
+							
+						});
+						
+						$('#page1').addClass('thispage');
+						
 					}
 			});
 

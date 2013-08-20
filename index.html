@@ -27,10 +27,12 @@
 			<h1>minboxer</h1>
 		</header>
 		
+		<div id="paginator"></div>
+		
 		<div id="galleryitems"></div>
 		<script type="text/template" id="galleryItem-template">
 			<div class="item-wrap" id="item<%= id %>">
-				<a href="#" class="item"><%= id %></a><img src="https://minbox.com<%= urls.gallery %>">
+				<img src="https://minbox.com<%= urls.gallery %>"><a href="#" class="item"><%= id %></a>
 			</div>
 		</script>
 				

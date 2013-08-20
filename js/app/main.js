@@ -1,6 +1,6 @@
 /* github.com/andrewbaldock/soundora */
 
-define(["jquery", "underscore", "json2", "backbone", "backbone-pageable", "app/minboxer"], function($) {
+define(["jquery", "underscore", "json2", "backbone", "app/minboxer"], function($) {
     
     $(function() {  
   
