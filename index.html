@@ -9,10 +9,10 @@
     <meta content="SoundCloud Radio" name="keywords">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="http://andrewbaldock.com/soundora" rel="canonical">
+    <link href="http://andrewbaldock.com/minboxer" rel="canonical">
     <link href="/img/sitepreview.png" rel="image_src" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="../css/longshadow.css" rel="stylesheet" type="text/css">
+    <link href="css/longshadow.css" rel="stylesheet" type="text/css">
     <script data-main="js/app/startup" src="js/lib/require.js"></script>
     
 </head>
@@ -24,7 +24,7 @@
 	<div id="container">
 	
 		<header>
-			<h1>minboxer</h1>
+			<h1 class="longshadow">minboxer</h1>
 		</header>
 		
 		<div id="paginator"></div>
@@ -32,7 +32,7 @@
 		<div id="galleryitems"></div>
 		<script type="text/template" id="galleryItem-template">
 			<div class="item-wrap" id="item<%= id %>">
-				<img src="https://minbox.com<%= urls.gallery %>"><a href="#" class="item"><%= id %></a>
+				<img src="https://minbox.com<%= urls.gallery %>"><a href="#" class="item"><%= display_name %></a>
 			</div>
 		</script>
 				
